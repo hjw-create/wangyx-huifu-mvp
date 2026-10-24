@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>校队恢复防护清单 · 训后轻指导</title>
+<style>
+:root{--g:#2f6b52;--g2:#3d8a68;--bg:#f4faf6;--ink:#1a2e24;--line:#c5ddd0}
+*{box-sizing:border-box}body{margin:0;font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(165deg,#e8f5ee 0%,var(--bg) 45%,#fff 100%);color:var(--ink);line-height:1.55}
+.wrap{max-width:720px;margin:0 auto;padding:28px 18px 64px}
+.brand{font-size:13px;letter-spacing:.12em;color:var(--g);font-weight:600;margin-bottom:8px}
+h1{font-size:1.55rem;margin:0 0 10px;color:var(--g);font-weight:700}
+.lead{margin:0 0 22px;color:#3a5348;font-size:.98rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 16px;margin-bottom:16px;box-shadow:0 2px 10px rgba(47,107,82,.06)}
+.card h2{margin:0 0 12px;font-size:1.05rem;color:var(--g)}
+.bound{display:flex;flex-direction:column;gap:8px}.bound span{background:#eef7f1;border-left:3px solid var(--g);padding:8px 12px;font-size:.92rem}
+.why{padding-left:1.1em;margin:0}.why li{margin-bottom:6px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}.steps li{counter-increment:s;position:relative;padding:10px 12px 10px 44px;margin-bottom:8px;background:#f7fbf8;border-radius:10px;border:1px solid var(--line)}
+.steps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:24px;height:24px;border-radius:50%;background:var(--g);color:#fff;font-size:.85rem;display:flex;align-items:center;justify-content:center}
+.check{display:flex;flex-direction:column;gap:10px}.check label{display:flex;gap:10px;align-items:flex-start;padding:10px;border:1px solid var(--line);border-radius:10px;cursor:pointer;background:#fafdfb}
+.check input{margin-top:3px;accent-color:var(--g)}
+.form{display:grid;gap:10px}.form label{font-size:.88rem;color:#3a5348}.form input,.form select,.form textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff}
+.form textarea{min-height:64px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(max-width:520px){.row{grid-template-columns:1fr}}
+.btn{display:inline-block;background:var(--g);color:#fff;border:none;padding:12px 22px;border-radius:999px;font:inherit;font-weight:600;cursor:pointer;margin-top:6px}
+.btn:hover{background:var(--g2)}.btn:disabled{opacity:.45;cursor:not-allowed}
+.hint{font-size:.82rem;color:#5a7266;margin-top:8px}
+.err{color:#a33;font-size:.88rem;margin-top:6px;display:none}
+.list{list-style:none;padding:0;margin:0}.list li{padding:12px;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;background:#fafdfb;font-size:.9rem}
+.list .meta{color:#5a7266;font-size:.8rem;margin-top:4px}
+footer{margin-top:28px;font-size:.8rem;color:#6a8074;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">校队恢复防护 · 非诊疗轻工具</div>
+  <h1>练完先按清单放松，别硬撑</h1>
+  <p class="lead">给校橄榄球/田径队队员的训后拉伸、冷热敷节点与贴扎提醒。只做物理恢复指导，不判断伤情、不开方、不卖药。</p>
+
+  <div class="card">
+    <h2>边界三句</h2>
+    <div class="bound">
+      <span>这是训练后的恢复清单，不是伤情诊断。</span>
+      <span>冷热敷与贴扎仅为通用防护提醒，不能替代校医或康复师。</span>
+      <span>出现急性肿胀、剧痛或关节失稳，请立即停训并就医。</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>为什么先做这个</h2>
+    <ol class="why">
+      <li>高强度训练后肌肉酸痛常见，但系统放松指导少。</li>
+      <li>队内互相提醒成本低，清单比口头「自己注意」更可执行。</li>
+      <li>先把拉伸与冷热敷做稳，再谈更复杂的防护方案。</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>三步上手</h2>
+    <ol class="steps">
+      <li>勾选本次训后恢复五项（拉伸、冷敷/热敷节点、贴扎检查等）。</li>
+      <li>填写一次恢复记录（部位、时长、主观感受），保存在本机。</li>
+      <li>需要当面指导时预约试填时段，由同学协助演示。</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>训后恢复五项</h2>
+    <p class="hint">五项勾齐后才能保存本次记录。</p>
+    <div class="check" id="checks">
+      <label><input type="checkbox" data-k="stretch"/> 下肢/核心主动拉伸 8–12 分钟（不弹振、不憋气）</label>
+      <label><input type="checkbox" data-k="cool"/> 易肿部位按需冷敷节点（单次≤15 分钟，隔布，不直接冰块贴皮）</label>
+      <label><input type="checkbox" data-k="warm"/> 次日僵硬可温敷放松（避开急性红肿区）</label>
+      <label><input type="checkbox" data-k="tape"/> 常用部位贴扎是否松脱/卷边已检查（仅提醒，非治疗）</label>
+      <label><input type="checkbox" data-k="note"/> 主观酸痛 0–10 分已记下，异常剧痛已停训</label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>一次恢复记录</h2>
+    <form class="form" id="logForm">
+      <div class="row">
+        <div><label>训练项目</label><select id="sport" required>
+          <option value="">请选择</option>
+          <option>橄榄球对抗训</option>
+          <option>田径速度/耐力</option>
+          <option>力量房</option>
+          <option>其他队内训练</option>
+        </select></div>
+        <div><label>主要部位</label><input id="part" placeholder="如：腘绳肌 / 踝" required/></div>
+      </div>
+      <div class="row">
+        <div><label>恢复时长（分钟）</label><input id="mins" type="number" min="5" max="90" value="20" required/></div>
+        <div><label>酸痛自评 0–10</label><input id="score" type="number" min="0" max="10" value="4" required/></div>
+      </div>
+      <div><label>一句话感受（可选）</label><textarea id="feel" placeholder="例：拉伸后腘绳肌轻松一点"></textarea></div>
+      <button type="submit" class="btn" id="saveBtn" disabled>保存到本机</button>
+      <div class="err" id="logErr"></div>
+      <p class="hint">数据仅存本浏览器 localStorage，不上传服务器。</p>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>预约当面指导试填</h2>
+    <form class="form" id="bookForm">
+      <div class="row">
+        <div><label>称呼</label><input id="name" placeholder="队内称呼" required/></div>
+        <div><label>手机号</label><input id="phone" inputmode="numeric" maxlength="11" placeholder="11 位手机号" required/></div>
+      </div>
+      <div><label>希望时段</label><select id="slot" required>
+        <option value="">请选择</option>
+        <option>训练后当晚 30 分钟内</option>
+        <option>次日上午轻量演示</option>
+        <option>周末队内集中讲解</option>
+      </select></div>
+      <button type="submit" class="btn">提交预约意向</button>
+      <div class="err" id="bookErr"></div>
+      <p class="hint">预约仅用于同学试填对接，不构成医疗服务预约。联系电话 15242539332。</p>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>本机恢复记录</h2>
+    <ul class="list" id="list"><li class="meta">暂无记录</li></ul>
+  </div>
+
+  <footer>校队恢复防护清单 · MVP · 非诊疗 · 学号 2024121042 · https://hjw-create.github.io/wangyx-huifu-mvp/</footer>
+</div>
+<script>
+(function(){
+  const KEY='wangyx-huifu-logs-v1';
+  const checks=[...document.querySelectorAll('#checks input')];
+  const saveBtn=document.getElementById('saveBtn');
+  const logErr=document.getElementById('logErr');
+  const bookErr=document.getElementById('bookErr');
+  const list=document.getElementById('list');
+
+  function allChecked(){return checks.every(c=>c.checked)}
+  function syncBtn(){saveBtn.disabled=!allChecked()}
+  checks.forEach(c=>c.addEventListener('change',syncBtn));
+  syncBtn();
+
+  function load(){
+    try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return []}
+  }
+  function render(){
+    const rows=load();
+    if(!rows.length){list.innerHTML='<li class="meta">暂无记录</li>';return}
+    list.innerHTML=rows.slice().reverse().map(r=>
+      `<li><strong>${r.sport}</strong> · ${r.part} · ${r.mins}分钟 · 酸痛${r.score}/10`+
+      (r.feel?`<div>${r.feel}</div>`:'')+
+      `<div class="meta">${r.at}</div></li>`
+    ).join('');
+  }
+  render();
+
+  document.getElementById('logForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    logErr.style.display='none';
+    if(!allChecked()){logErr.textContent='请先勾齐训后恢复五项';logErr.style.display='block';return}
+    const row={
+      sport:document.getElementById('sport').value,
+      part:document.getElementById('part').value.trim(),
+      mins:+document.getElementById('mins').value,
+      score:+document.getElementById('score').value,
+      feel:document.getElementById('feel').value.trim(),
+      at:new Date().toLocaleString('zh-CN',{hour12:false})
+    };
+    const rows=load();rows.push(row);localStorage.setItem(KEY,JSON.stringify(rows));
+    render();
+    e.target.reset();document.getElementById('mins').value=20;document.getElementById('score').value=4;
+    checks.forEach(c=>c.checked=false);syncBtn();
+  });
+
+  document.getElementById('bookForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    bookErr.style.display='none';
+    const phone=document.getElementById('phone').value.trim();
+    if(!/^1\d{10}$/.test(phone)){bookErr.textContent='请填写 11 位有效手机号';bookErr.style.display='block';return}
+    alert('已记录预约意向（本机演示）。正式对接由同学当面确认。');
+    e.target.reset();
+  });
+})();
+</script>
+</body>
+</html>
